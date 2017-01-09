@@ -1,0 +1,14 @@
+{
+  "name": "invoice",
+  "version": "1.0.0",
+  "description": "invoice",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {  
+    "prestart": "npm install",
+    "start": "http-server ./app -a localhost -p 8000 -c-1"
+  },
+  "author": "hcode",
+  "license": "ISC"
+}

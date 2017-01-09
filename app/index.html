@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="InvoiceApp">
+<head>
+	
+	<title>test</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" media="all" href="css/main.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+	<script src="app.config.js"></script>
+</head>
+<body>
+	<section id="page_customer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2">
+					<div class="ams_service">
+						<div class="ams_services-header"><i class="fa fa-user-o" aria-hidden="true"></i>AMS Desing Services</div>
+						<div class="ams_services-title">officent<sup></sup></div>	
+						<nav id="ams_services-left-smenu">	
+							<ul >
+								<li><a href="#dashboard"><i class="fa fa-windows" aria-hidden="true"></i>Dashboard</a></li>
+								<li><a href="#invoice"><i class="fa fa-print" aria-hidden="true"></i>
+Invoice</a></li>
+								<li><a href="#orders"><i class="fa fa-first-order" aria-hidden="true"></i>Orders</a></li>
+								<li><a href="#messages"><i class="fa fa-envelope-o" aria-hidden="true"></i>Messgaes<sup>3</sup></a></li>
+								<li><a href="#documents"><i class="fa fa-file-text-o" aria-hidden="true"></i>Dokuments<sup>3</sup></a></li>
+								<li><a href="#settings"><i class="fa fa-cog" aria-hidden="true"></i>
+Settings</a></li>
+							</ul>     
+						</nav>
+						<div class="ams_services-pro">
+							<button class="btn btn-danger" ng-click="upgrade-pro"><i class="fa fa-star-o" aria-hidden="true"></i>Upgrade Pro</button>
+						</div>
+						<div class="ams_fotter"><small>Officent.dk2016</small></div>
+					</div>
+				</div>				
+				<div class="col-sm-10"> 
+					<div ng-view></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

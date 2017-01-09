@@ -1,0 +1,46 @@
+<div class="header_page-nav" ng-controller="dashboardController">
+	<i class="fa fa-angle-left" aria-hidden="true"></i>Invoices</div>
+		<div class="add_customer">
+			<div class="add_customer-title"><h2>New Invoice</h2></div>
+			<div class="add_customer-discription"><h3>Add customer and invoice info</h3></div>
+			<div class="add_customer-set" >
+				<div class="set_country">
+					<label>Country</label>		
+					<select ng-model="country" id="counry_id">Select Country
+						<option value="Ukraine">Ukraine</option>
+						<option value="Russian">Russian</option>
+					</select>
+				</div>
+				<div  ng-model="company" class="set_company">
+					<label>CVR Number / Company Name</label>
+					<input ng-model="company" type="text" placeholder ="Searchs">
+				</div>
+				<button class="btn btn-success" ng-click="AddCustomer()"><i class="fa fa-plus" aria-hidden="true"></i>Add customer</button>
+				<small> case yuo can't find them</small>
+			</div>
+			<div class="customer_info" >
+				<form name="saveForm" class="form-horizontal">
+					<ul > 
+				  	     	<li ng-repeat="CustomItem in dashboardArray">
+				  	     		<input type="text" name="field-{{CustomItem}}" placeholder="{{CustomItem.country}} {{CustomItem.company}}">
+				  	     	</li>
+
+  						<li><label>Invoice Number</label><input type="text" name="in-number" placeholder="Place Invoice Numbers" ></li>
+						<li><label class="label-date">Invoice Data<input type="date" name="in-date"></label>
+						<label class="label-date">Dlivery Data<input type="date" name="deivery-date"></label></li>
+						<li><label>Order ref</label><input type="text" placeholder="Order ref"></li>
+						<li><label>Customer refs</label><input type="text" placeholder="Place Customer ref"></li>
+						<li><label>Account Number</label><input type="text"placeholder="Place Account Number"></li>
+						<li><label>Currency</label><select name="currency" id="currency_id">USD</select></li>
+					</ul>
+				</form>
+
+			</div>
+		</div>
+					<div class="fotter_button">
+						<button class="btn btn-success" ng-click="save-invoice"><i class="fa fa-sort-desc" aria-hidden="true"></i>Save</button>
+						<button class="btn btn-preview" ng-click="preview-invoice"><i class="fa fa-eye" aria-hidden="true"></i>Preview</button>
+						<button class="btn btn-delete" ng-click="delete-invoice"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
+					</div>
+	
+</div>
