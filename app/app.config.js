@@ -2,7 +2,7 @@ var app = angular.module('InvoiceApp', ['ngRoute']);
  app.config( ['$routeProvider', function($routeProvider) {
   $routeProvider
       .when('/dashboard', {
-        templateUrl: '/dashboard.html',
+        templateUrl: './dashboard.html',
         controller: 'dashboardController'
       })
        .when('/invoice', {
@@ -26,7 +26,8 @@ var app = angular.module('InvoiceApp', ['ngRoute']);
   }]);
 
 
- app.controller('dashboardController', function($scope){
+ app.controller('dashboardController', 
+  function AddController($scope){
      $scope.dashboardArray = [];
      $scope.AddCustomer = function() {
             $scope.dashboardArray.push(
@@ -34,6 +35,20 @@ var app = angular.module('InvoiceApp', ['ngRoute']);
                 'country': $scope.country,
                 'company': $scope.company
               });
-                console.log($scope.dashboardArray);
+            //    console.log($scope.dashboardArray);
         }
-       });
+ });
+app.controller('SaveController', 
+function SaveController($scope, $http){
+         
+      
+        $scope.save = function (savedata, saveForm){
+            if(saveForm.$valid){
+                 
+                $http.post("save.php", savedata).success(function (data) {
+                    $scope.response=data;
+                         console.log($scope.response);
+                });
+            }
+        }
+    });
